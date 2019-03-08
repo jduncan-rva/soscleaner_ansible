@@ -151,7 +151,7 @@ def run_module():
     # manipulate or modify the state as needed (this is going to be the
     # part where your module will do what it needs to do)
     result['sosreport_path'] = module.params['sosreport'],
-    result['obfuscated_report_path'] = cleaner.report_dir,
+    result['obfuscated_report_path'] = cleaner.archive_path,
     result['hostname_report'] = cleaner.hn_report,
     result['domainname_report'] = cleaner.dn_report,
     result['ip_report'] = cleaner.ip_report,
