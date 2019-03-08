@@ -156,7 +156,7 @@ def run_module():
     result['ip_report'] = cleaner.ip_report,
     result['user_report'] = cleaner.un_report,
     result['mac_report'] = cleaner.mac_report,
-    result['keyword_report'] = cleaner.keyword_report,
+    result['keyword_report'] = cleaner.kw_report,
     result['changed'] = True
 
     # during the execution of the module, if there is an exception or a
