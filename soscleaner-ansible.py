@@ -136,6 +136,8 @@ def run_module():
     param_options.report_dir = module.params['report_dir']
     param_options.keywords_file = None
     param_options.users_file = None
+    param_options.hostname_path = None
+    param_options.files = None
 
     cleaner = SOSCleaner()
     cleaner.quiet = True
