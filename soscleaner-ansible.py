@@ -134,6 +134,8 @@ def run_module():
     param_options.keywords = module.params['keywords']
     param_options.loglevel = module.params['loglevel']
     param_options.report_dir = module.params['report_dir']
+    param_options.keywords_file = None
+    param_options.users_file = None
 
     cleaner = SOSCleaner()
     cleaner.quiet = True
