@@ -90,7 +90,7 @@ def run_module():
         users=dict(type='list', required=False),
         keywords=dict(type='list', required=False),
         loglevel=dict(choices=['INFO', 'WARNING', 'ERROR', 'CRITICAL', 'DEBUG'], default='INFO'),
-        report_dir=dict(type='path', required=False, default='/tmp'),
+        report_dir=dict(type='path', required=True, default='/tmp'),
     )
 
     # seed the result dict in the object
@@ -130,7 +130,6 @@ def run_module():
     cleaner.loglevel = module.params['loglevel']
     cleaner.origin_path, cleaner.dir_path, cleaner.session, cleaner.logfile, cleaner.uuid = cleaner._prep_environment()
     cleaner._start_logging(cleaner.logfile)
-    cleaner.report_dir = '/tmp'
 
     cleaner.clean_report(module.params, module.params['sosreport'])
 
