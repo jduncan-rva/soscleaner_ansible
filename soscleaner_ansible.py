@@ -46,10 +46,6 @@ options:
             - Additional MAC addresses to obfuscate in the sosreport
         required: false
 
-
-extends_documentation_fragment:
-    - azure
-
 author:
     - Jamie Duncan (@jduncan-rva)
 '''
@@ -100,7 +96,6 @@ def run_module():
     # for consumption, for example, in a subsequent task
     result = dict(
         changed=False,
-        logfile='',
         sosreport_path='',
         obfuscated_report_path='',
         hostname_report='',
@@ -158,7 +153,6 @@ def run_module():
     result['user_report'] = cleaner.un_report,
     result['mac_report'] = cleaner.mac_report,
     result['keyword_report'] = cleaner.kw_report,
-    result['logfile'] = cleaner.logfile,
     result['changed'] = True
 
     # during the execution of the module, if there is an exception or a
