@@ -141,6 +141,7 @@ def run_module():
 
     cleaner = SOSCleaner()
     cleaner.loglevel = module.params['loglevel']
+    cleaner.quiet = True
     cleaner.origin_path, cleaner.dir_path, cleaner.session, cleaner.logfile, cleaner.uuid = cleaner._prep_environment()
     cleaner._start_logging(cleaner.logfile)
 
