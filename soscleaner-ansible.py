@@ -154,7 +154,7 @@ def run_module():
     result['hostname_report'] = cleaner.hn_report,
     result['domainname_report'] = cleaner.dn_report,
     result['ip_report'] = cleaner.ip_report,
-    result['user_report'] = cleaner.user_report,
+    result['user_report'] = cleaner.un_report,
     result['mac_report'] = cleaner.mac_report,
     result['keyword_report'] = cleaner.keyword_report,
     result['changed'] = True
