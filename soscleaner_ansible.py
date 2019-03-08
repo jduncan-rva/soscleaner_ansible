@@ -45,6 +45,10 @@ options:
         description:
             - Additional MAC addresses to obfuscate in the sosreport
         required: false
+    report_dir:
+        description:
+            - The output directory for your obfuscated content and reports
+        required: false
 
 author:
     - Jamie Duncan (@jduncan-rva)
@@ -136,7 +140,6 @@ def run_module():
     param_options.files = None
 
     cleaner = SOSCleaner()
-    cleaner.quiet = True
     cleaner.loglevel = module.params['loglevel']
     cleaner.origin_path, cleaner.dir_path, cleaner.session, cleaner.logfile, cleaner.uuid = cleaner._prep_environment()
     cleaner._start_logging(cleaner.logfile)
