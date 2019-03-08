@@ -11,7 +11,7 @@ ANSIBLE_METADATA = {
 
 DOCUMENTATION = '''
 ---
-module: soscleaner
+module: soscleaner_ansible
 
 short_description: Ansible module to interact with SOSCleaner for data obfuscation
 
