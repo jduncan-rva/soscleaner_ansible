@@ -90,7 +90,7 @@ def run_module():
         users=dict(type='list', required=False),
         keywords=dict(type='list', required=False),
         loglevel=dict(choices=['INFO', 'WARNING', 'ERROR', 'CRITICAL', 'DEBUG'], default='INFO'),
-        report_dir=dict(type='path', required=True, default='/tmp'),
+        report_dir=dict(type='path', required=False, default='/tmp'),
     )
 
     # seed the result dict in the object
