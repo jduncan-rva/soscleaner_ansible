@@ -130,6 +130,7 @@ def run_module():
     cleaner.loglevel = module.params['loglevel']
     cleaner.origin_path, cleaner.dir_path, cleaner.session, cleaner.logfile, cleaner.uuid = cleaner._prep_environment()
     cleaner._start_logging(cleaner.logfile)
+    cleaner.report_dir = '/tmp'
 
     cleaner.clean_report(module.params, module.params['sosreport'])
 
