@@ -125,13 +125,24 @@ def run_module():
     if module.check_mode:
         return result
 
+    class Options(object):
+        pass
+
+    param_options = Options()
+    param_options.domains = module.params['domains']
+    param_options.networks = module.params['networks']
+    param_options.users = module.params['users']
+    param_options.keywords = module.params['keywords']
+    param_options.loglevel = module.params['loglevel']
+    param_options.report_dir = module.params['report_dir']
+
     cleaner = SOSCleaner()
     cleaner.quiet = True
     cleaner.loglevel = module.params['loglevel']
     cleaner.origin_path, cleaner.dir_path, cleaner.session, cleaner.logfile, cleaner.uuid = cleaner._prep_environment()
     cleaner._start_logging(cleaner.logfile)
 
-    cleaner.clean_report(module.params, module.params['sosreport'])
+    cleaner.clean_report(param_options, module.params['sosreport'])
 
     # manipulate or modify the state as needed (this is going to be the
     # part where your module will do what it needs to do)
