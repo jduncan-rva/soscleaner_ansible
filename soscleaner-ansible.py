@@ -125,10 +125,9 @@ def run_module():
     if module.check_mode:
         return result
 
-    class Options(object):
+    class param_options:
         pass
 
-    param_options = Options()
     param_options.domains = module.params['domains']
     param_options.networks = module.params['networks']
     param_options.users = module.params['users']
