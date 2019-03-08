@@ -129,7 +129,7 @@ def run_module():
     cleaner.quiet = True
     cleaner.loglevel = module.params['loglevel']
     cleaner.origin_path, cleaner.dir_path, cleaner.session, cleaner.logfile, cleaner.uuid = cleaner._prep_environment()
-    cleaner._start_logging()
+    cleaner._start_logging(cleaner.logfile)
 
     cleaner.clean_report(module.params, module.params['sosreport'])
 
@@ -148,9 +148,6 @@ def run_module():
     # during the execution of the module, if there is an exception or a
     # conditional state that effectively causes a failure, run
     # AnsibleModule.fail_json() to pass in the message and the result
-    # if module.params['name'] == 'fail me':
-    #     module.fail_json(msg='You requested this to fail', **result)
-
     # in the event of a successful module execution, you will want to
     # simple AnsibleModule.exit_json(), passing the key/value results
     module.exit_json(**result)
